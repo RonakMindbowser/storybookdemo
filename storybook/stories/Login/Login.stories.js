@@ -6,6 +6,7 @@ import { StyleSheet, Text } from 'react-native';
 import CenterView from '../CenterView';
 import Login from ".";
 import { themes } from '@storybook/theming';
+import { NavigationDecorator } from '../../../src/container/AppContainer';
 
 storiesOf('Login', module)
     .addParameters({
@@ -14,6 +15,7 @@ storiesOf('Login', module)
         }
     })
     .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+    .addDecorator((getStory) => <NavigationDecorator story={getStory} routeName={'Login'} />)
     .add('Only Header', () => (
         <Login
             // title={'Welcome to TravelRite!'}

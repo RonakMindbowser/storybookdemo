@@ -3,5 +3,6 @@
 // import '@storybook/addon-knobs/manager';
 import '@storybook/addon-actions';
 import '@storybook/addon-links';
-require('@storybook/addon-knobs/register');
-require('@storybook/addon-actions/register');
+import '@storybook/addon-knobs/register';
+import '@storybook/addon-actions/register';
+import "@storybook/addon-storysource/register";

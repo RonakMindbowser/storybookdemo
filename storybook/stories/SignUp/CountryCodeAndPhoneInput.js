@@ -55,6 +55,7 @@ const CountryCodeAndPhoneInput = ({
                         setIsFocused(false);
                     }}
                     autoCorrect={false}
+                    placeholderTextColor={'gray'}
                     autoCompleteType="off"
                     blurOnSubmit={false}
                     inputAccessoryViewID={'Done'}

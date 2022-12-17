@@ -14,6 +14,9 @@ module.exports = {
       },
     }),
   },
+  babelTransformerPath: require.resolve(
+    "react-native-storysource-transformer"
+  ),
   resolver: {
     resolverMainFields: ['sbmodern', 'react-native', 'browser', 'main'],
   },

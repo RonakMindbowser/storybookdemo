@@ -1,3 +1,4 @@
+import { useNavigation, useRoute } from '@react-navigation/native';
 import React, { Fragment } from 'react';
 import { Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Colors from '../../../src/theme/Colors';
@@ -19,7 +20,15 @@ const Login = ({
 
     passwordTitle,
     passwordPlaceholder,
+
+    ...rest
 }) => {
+    const navigation = useNavigation();
+    console.log("navigationL", navigation);
+    const route = useRoute()
+    console.log("Route:", route);
+    console.log("Rest:", rest);
+
     return (
         <Fragment>
             <SafeAreaView style={styles.container}>
@@ -51,13 +60,17 @@ const Login = ({
                         />
 
                         {showForgotPassword ?
-                            <TouchableOpacity style={styles.forgotPasswordWrap} onPress={() => navigation.navigate("ForgotPassword")}>
+                            <TouchableOpacity style={styles.forgotPasswordWrap} onPress={() => {
+                                navigation.navigate("SignUp")
+                            }}>
                                 <Text style={styles.forgotPassword}>{'Forgot Password?'}</Text>
                             </TouchableOpacity>
                             : null
                         }
 
-                        <TouchableOpacity style={[styles.socialButton, { backgroundColor: "blue", }]} onPress={onPressSignIn}>
+                        <TouchableOpacity style={[styles.socialButton, { backgroundColor: "blue", }]} onPress={() => {
+                            navigation.navigate("SignUp")
+                        }}>
                             <Text style={[styles.textStyle, { color: "white" }]}>{"Sign In"}</Text>
                         </TouchableOpacity>
 

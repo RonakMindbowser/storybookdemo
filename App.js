@@ -1,10 +1,11 @@
-// import React from 'react';
-// import { Text, View } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { NavigationDecorator } from './src/container/AppContainer';
 
 // const App = () => (
-//   <View>
-//     <Text>App</Text>
-//   </View>
+//     <View style={{ flex: 1 }}>
+//         <NavigationDecorator />
+//     </View>
 // );
 
 // export default App;

@@ -5,6 +5,7 @@ import Colors from '../../../src/theme/Colors';
 import { FontSize } from '../../../src/theme/Fonts';
 import InputField, { screenWidth } from '../Login/InputField';
 import CountryCodeAndPhoneInput from './CountryCodeAndPhoneInput';
+import QS from "query-string";
 
 const SignUp = ({
     title,
@@ -42,7 +43,12 @@ const SignUp = ({
     layoutColor,
     titleColor,
     descriptionColor,
+    ...props
 }) => {
+    let qs = QS.parse("http://192.168.1.4:7007/?path=/story/signup--default-view&knob-SignUp Title=Welcome to TravelRite!&knob-SignUp Description=Create your account&knob-ShowPic=true&knob-uploadPhotoText=Upload Pic&knob-ShowNameOption=true&knob-First Name Placeholder=FirstName&knob-First Name Title=FirstName&knob-Last Name Placeholder=LastName&knob-Last Name Title=LastName&knob-ShowPhoneInput=true&knob-Phone Placeholder=Enter Phone No&knob-Phone Title=Phone Number&knob-Email Title=Email Id&knob-Email Placeholder=Enter email&knob-Password Title=Password&knob-Password Placeholder=Enter password&knob-ShowTermsAndCondition=true&knob-SignUp Button Name=Sign Up&knob-Show Socail Login=true&knob-CountryCode=12&knob-Layout Color=#FFFFFF&knob-Title Color=rgba(22,55,78,1)&knob-Description Color=rgba(158,27,27,1)");
+    console.log("QS ::", qs);
+
+    console.log("Props:", props);
     return (
         <Fragment>
             <SafeAreaView style={[styles.container, { backgroundColor: layoutColor }]}>
